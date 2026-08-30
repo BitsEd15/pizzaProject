@@ -3,16 +3,13 @@ import TheCategory from './TheCategory.vue';
 import TheSelect from './TheSelect.vue';
 import { ref } from 'vue';
 import { cartStorage } from '@/stores/cart.js';
+import { cardsStorage } from '@/stores/cards.js';
+const cardsItems = cardsStorage()
 
 const cart = cartStorage()
 
 
-// Выбор категории
-const categoriesArr = ["Все", "Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
-const currentCategory = ref('Все')
-const changeCurrentCategory = (val) => {
-    currentCategory.value = val
-}
+
 
 
 // Выбор способа сортировки
@@ -43,8 +40,8 @@ const changeCurrentSelection = (val) => {
         <div class="header__hr header__hr--global">
         </div>
         <div class="header__selection">
-            <TheCategory :itemsCat="categoriesArr" :chosenCategory='currentCategory'
-                @SelectCategory="changeCurrentCategory" />
+            <TheCategory :itemsCat="cardsItems.categoriesArr" :chosenCategory='cardsItems.currentCategory'
+                @SelectCategory="cardsItems.changeCurrentCategory()" />
             <div class="header__selection-options">
                 <span class="header__selection-options-text"
                     :class="{ 'header__selection-options-text-clicked': sortIsClicked === true }">
