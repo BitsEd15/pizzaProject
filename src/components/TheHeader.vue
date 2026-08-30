@@ -1,10 +1,11 @@
 <script setup>
 import TheCategory from './TheCategory.vue';
 import TheSelect from './TheSelect.vue';
-import { ref, defineEmits } from 'vue';
-//Тотал цена и количество
-const totalPrice = ref('Тут будет цена ₽')
-const totalQuantity = ref('Тут будет кол-во')
+import { ref } from 'vue';
+import { cartStorage } from '@/stores/cart.js';
+
+const cart = cartStorage()
+
 
 // Выбор категории
 const categoriesArr = ["Все", "Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
@@ -34,9 +35,9 @@ const changeCurrentSelection = (val) => {
                 <p>самая вкусная пицца во вселенной</p>
             </div>
             <router-link to="/cart" class="header__basic-info-total">
-                <p>{{ totalPrice }}</p>
+                <p>{{ cart.totalPrice }} ₽</p>
                 <div></div>
-                <p>{{ totalQuantity }}</p>
+                <p>{{ cart.totalQuantity }}</p>
             </router-link>
         </div>
         <div class="header__hr header__hr--global">
@@ -108,6 +109,7 @@ const changeCurrentSelection = (val) => {
     }
 
 }
+
 .header__selection {
     display: flex;
     justify-content: space-between;

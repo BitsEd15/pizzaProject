@@ -6,13 +6,6 @@ import HomeView from './views/HomeView.vue';
 
 <template>
 	<div class="g-container">
-		<header>
-			<nav>
-				<router_link to="/home">
-					Главная
-				</router_link>
-			</nav>
-		</header>
 
 		<RouterView />
 	</div>

@@ -16,6 +16,22 @@ export const cartStorage = defineStore('cart', () => {
         else
             return true
     })
+    const clearCart = () => items.value.splice(0)
+    const minusItem = (el) => {
+        if (el.quantity > 0) {
+            el.quantity--;
+        }
+    }
 
-    return { items, addItem, isCartEmpty }
+    const removeEl = (el) => items.value.splice(items.value.indexOf(el), 1)
+
+    const totalQuantity = computed(() => {
+        return items.value.reduce((sum, el) => sum + el.quantity, 0);
+    });
+
+    const totalPrice = computed(() => {
+        return items.value.reduce((sum, el) => sum + (Number(el.price) * Number(el.quantity)), 0);
+    });
+
+    return { items, addItem, isCartEmpty, clearCart, minusItem, removeEl, totalQuantity, totalPrice }
 })

@@ -4,7 +4,7 @@ import TheCard from './TheCard.vue';
 
 //Карточки товаров
 const cardsArr = [
-    {   
+    {
         id: 1,
         image: '/image 2.png',
         name: 'Чизбургер-пицца',
@@ -12,7 +12,7 @@ const cardsArr = [
         size: [26, 30, 40],
         price: 395
     },
-    {   
+    {
         id: 2,
         image: '/image 7.png',
         name: 'Сырная',
@@ -20,7 +20,7 @@ const cardsArr = [
         size: [26, 30, 40],
         price: 450
     },
-    {   
+    {
         id: 3,
         image: '/image 6.jpg',
         name: 'Креветки по-азиатски',
@@ -28,7 +28,7 @@ const cardsArr = [
         size: [26, 30, 40],
         price: 290
     },
-    {   
+    {
         id: 4,
         image: '/image 5.png',
         name: 'Сырный цыпленок',
@@ -36,32 +36,34 @@ const cardsArr = [
         size: [26, 30, 40],
         price: 385
     },
-    {   
-        id: 1,
+    {
+        id: 5,
         image: '/image 2.png',
-        name: 'Чизбургер-пицца',
+        name: 'Чизстейк-пицца',
         dough: ['тонкое', 'традиционное'],
         size: [26, 30, 40],
         price: 395
     },
-    {   
-        id: 2,
+    {
+        id: 6,
         image: '/image 7.png',
-        name: 'Сырная',
+        name: 'Сытная',
         dough: ['тонкое', 'традиционное'],
         size: [26, 30, 40],
         price: 450
     },
-    {   id: 3,
+    {
+        id: 7,
         image: '/image 6.jpg',
-        name: 'Креветки по-азиатски',
+        name: 'Креветки по-осетински',
         dough: ['тонкое', 'традиционное'],
         size: [26, 30, 40],
         price: 290
     },
-    {   id: 4,
+    {
+        id: 8,
         image: '/image 5.png',
-        name: 'Сырный цыпленок',
+        name: 'Сырный орленок',
         dough: ['тонкое', 'традиционное'],
         size: [26, 30, 40],
         price: 385
@@ -75,7 +77,7 @@ const cardsArr = [
 <template>
     <h2 class="catalog-title">Все пиццы</h2>
     <div class="catalog-field">
-        <TheCard :item="el" v-for="el in cardsArr" />.
+        <TheCard :item="el" v-for="el in cardsArr" :key="el.id" />
     </div>
 </template>
 
@@ -95,5 +97,6 @@ const cardsArr = [
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 35px;
     row-gap: 65px;
+    padding-bottom: 96px;
 }
 </style>

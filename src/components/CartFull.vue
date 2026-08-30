@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from 'vue';
 import { cartStorage } from '@/stores/cart.js';
-import { RouterLink} from 'vue-router';
 const cart = cartStorage()
 
 </script>
@@ -15,10 +13,10 @@ const cart = cartStorage()
             </div>
             <div class="full__header-clear">
                 <img src="/vectors/iconfinder_trash-2_3324927 1.svg" alt="">
-                <h3>Очистить корзину</h3>
+                <h3 @click="cart.clearCart()">Очистить корзину</h3>
             </div>
         </div>
-        <div class="full__content" v-for="el in cart.items">
+        <div class="full__content" v-for="el in cart.items" :key="el.id">
             <div class="full__content-cards">
                 <img class="full__content-cards-img" :src="el.img" alt="">
                 <div class="full__content-cards-description">
@@ -31,20 +29,20 @@ const cart = cartStorage()
             </div>
             <div class="full__content-cards-config">
                 <div class="full__content-cards-config-quantity">
-                    <img src="/vectors/minus.svg" alt="">
+                    <img src="/vectors/minus.svg" @click="cart.minusItem(el)">
                     <span>{{ el.quantity }}</span>
-                    <img src="/vectors/plus.svg" alt="">
+                    <img src="/vectors/plus.svg" @click="el.quantity++">
                 </div>
                 <p class="full__content-cards-config-price">{{ Number(el.price) * Number(el.quantity) }} ₽</p>
-                <img class="full__content-cards-config-remove" src="/vectors/close.svg" alt="">
+                <img class="full__content-cards-config-remove" src="/vectors/close.svg" @click="cart.removeEl(el)">
             </div>
         </div>
         <div class="full__total">
             <h5 class="full__total-quantity">Всего пицц:
-                <span>3 шт.</span>
+                <span>{{ cart.totalQuantity }} шт.</span>
             </h5>
             <h5 class="full__total-sum">Сумма заказа:
-                <span>900 ₽</span>
+                <span>{{ cart.totalPrice }} ₽</span>
             </h5>
         </div>
         <div class="full_button">
