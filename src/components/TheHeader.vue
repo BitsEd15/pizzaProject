@@ -1,26 +1,10 @@
 <script setup>
 import TheCategory from './TheCategory.vue';
 import TheSelect from './TheSelect.vue';
-import { ref } from 'vue';
 import { cartStorage } from '@/stores/cart.js';
 import { cardsStorage } from '@/stores/cards.js';
 const cardsItems = cardsStorage()
-
 const cart = cartStorage()
-
-
-
-
-
-// Выбор способа сортировки
-const selectionArr = ["популярности", "по цене", "по алфавиту"];
-const currentSelection = ref('популярности')
-const sortIsClicked = ref(false)
-const changeCurrentSelection = (val) => {
-    currentSelection.value = val
-}
-
-
 </script>
 
 <template>
@@ -41,14 +25,14 @@ const changeCurrentSelection = (val) => {
         </div>
         <div class="header__selection">
             <TheCategory :itemsCat="cardsItems.categoriesArr" :chosenCategory='cardsItems.currentCategory'
-                @SelectCategory="cardsItems.changeCurrentCategory()" />
+                @SelectCategory="cardsItems.changeCurrentCategory" />
             <div class="header__selection-options">
                 <span class="header__selection-options-text"
-                    :class="{ 'header__selection-options-text-clicked': sortIsClicked === true }">
+                    :class="{ 'header__selection-options-text-clicked': cart.sortIsClicked === true }">
                     Сортировка по:
                 </span>
-                <TheSelect :options='selectionArr' :currentMethod="currentSelection"
-                    @SelectOption="changeCurrentSelection" @toggle="sortIsClicked = $event" />
+                <TheSelect :options='cardsItems.selectionArr' :currentMethod="cardsItems.currentSelection"
+                    @SelectOption="cardsItems.changeCurrentSelection" @toggle="cart.sortIsClicked = $event" />
             </div>
         </div>
     </div>
@@ -121,15 +105,14 @@ const changeCurrentSelection = (val) => {
 
     .header__selection-options-text {
         display: inline-flex;
-        /* Меняем с inline на inline-flex */
         align-items: center;
-        /* Магия: выравнивает иконку и текст по центру */
         margin-right: 8px;
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 14px;
         letter-spacing: 0.01em;
         position: relative;
+
 
 
     }

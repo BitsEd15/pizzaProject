@@ -1,5 +1,7 @@
 <script setup>
 import { ref, defineEmits, defineProps } from 'vue';
+import { cardsStorage } from '@/stores/cards';
+const cardsItems = cardsStorage()
 
 const isShow = ref(false)
 const props = defineProps({

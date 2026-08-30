@@ -11,7 +11,7 @@ const cardsItems = cardsStorage()
 <template>
     <h2 class="catalog-title">Все пиццы</h2>
     <div class="catalog-field">
-        <TheCard :item="el" v-for="el in cardsItems.cardsArr" :key="el.id" />
+        <TheCard :item="el" v-for="el in cardsItems.sortedArray" :key="el.id" />
     </div>
 </template>
 

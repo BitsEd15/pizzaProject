@@ -37,11 +37,12 @@ const calculatedPrice = computed(() => {
 const cart = cartStorage()
 const emit = defineEmits(['addItem'])
 const addObjToCart = () => {
+    const finalDoughText = selectedDough.value === 'традиционное' ? 'толстое' : selectedDough.value;
     const obj = {
         id: `${props.item.id}-${selectedSize.value}-${selectedDough.value}`,
         img: props.item.image,
         name: props.item.name,
-        dough: selectedDough.value,
+        dough: finalDoughText,
         size: selectedSize.value,
         price: calculatedPrice.value,
         quantity: 1
