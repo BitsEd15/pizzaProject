@@ -12,7 +12,10 @@ const props = defineProps({
 })
 
 const btnContentArr = {
-    image: ['/vectors/plus1.svg', '/vectors/plus2.svg'],
+    image: [
+        import.meta.env.BASE_URL + 'vectors/plus1.svg',
+        import.meta.env.BASE_URL + 'vectors/plus2.svg'
+    ],
     text: 'Добавить'
 }
 //Чтобы менять стиль при клике на параметры и чтобы изначально был выбран тип пиццы

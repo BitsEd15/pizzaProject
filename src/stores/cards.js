@@ -21,7 +21,7 @@ export const cardsStorage = defineStore('cards', () => {
     const cardsArr = [
         {
             id: 1,
-            image: '/image 2.png',
+            image: import.meta.env.BASE_URL + '/image 2.png',
             name: 'Чизбургер-пицца',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -30,7 +30,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 2,
-            image: '/image 7.png',
+            image: import.meta.env.BASE_URL + '/image 7.png',
             name: 'Сырная',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -39,7 +39,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 3,
-            image: '/image 6.jpg',
+            image: import.meta.env.BASE_URL + '/image 6.jpg',
             name: 'Креветки по-азиатски',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -48,7 +48,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 4,
-            image: '/image 5.png',
+            image: import.meta.env.BASE_URL + '/image 5.png',
             name: 'Сырный цыпленок',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -57,7 +57,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 5,
-            image: '/image 2.png',
+            image: import.meta.env.BASE_URL + '/image 2.png',
             name: 'Чизстейк-пицца',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -66,7 +66,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 6,
-            image: '/image 7.png',
+            image: import.meta.env.BASE_URL + '/image 7.png',
             name: 'Сытная',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -75,7 +75,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 7,
-            image: '/image 6.jpg',
+            image: import.meta.env.BASE_URL + '/image 6.jpg',
             name: 'Креветки по-осетински',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
@@ -84,7 +84,7 @@ export const cardsStorage = defineStore('cards', () => {
         },
         {
             id: 8,
-            image: '/image 5.png',
+            image: import.meta.env.BASE_URL + '/image 5.png',
             name: 'Сырный орленок',
             dough: ['тонкое', 'традиционное'],
             size: [26, 30, 40],
