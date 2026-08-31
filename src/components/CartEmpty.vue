@@ -90,5 +90,9 @@
     justify-content: center;
     align-items: center;
     border: none;
+    transition: all 0.3s ease;
+}
+.empty__hero-btn:hover{
+background-color: var(--orange);
 }
 </style>

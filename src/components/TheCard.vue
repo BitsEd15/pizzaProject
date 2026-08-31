@@ -130,6 +130,8 @@ const addObjToCart = () => {
         text-align: center;
         color: var(--cat-button-option-text);
         opacity: 0.6;
+
+        transition: all 0.2s ease-in-out;
     }
 }
 
@@ -151,6 +153,7 @@ const addObjToCart = () => {
         text-align: center;
         color: var(--cat-button-option-text);
         opacity: 0.6;
+        transition: all 0.2s ease-in-out;
     }
 }
 
@@ -177,5 +180,15 @@ const addObjToCart = () => {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
     border-radius: 5px;
     opacity: 1;
+}
+
+.pizza-card__parameters-container-size>button:hover,
+.pizza-card__parameters-container-testo>button:hover {
+    color: var(--orange);
+}
+
+.pizza-card__parameters-container-testo .testo-btn--clicked:hover,
+.pizza-card__parameters-container-size .size-btn--clicked:hover {
+    color: var(--black);
 }
 </style>

@@ -43,9 +43,16 @@ const emit = defineEmits(['SelectCategory']);
 
     cursor: pointer;
     border: none;
+    transition: all 0.15s ease;
 }
 
 .categories__btn--selected {
+    background-color: var(--cat-button-selected);
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.categories__btn:hover {
     background-color: var(--cat-button-selected);
     color: #fff;
 }

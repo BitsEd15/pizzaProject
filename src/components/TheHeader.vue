@@ -69,6 +69,7 @@ const cart = cartStorage()
     justify-content: center;
     align-items: center;
     border: none;
+    transition: all 0.25s ease;
 
     div {
         width: 1px;
@@ -147,5 +148,9 @@ const cart = cartStorage()
         background-repeat: no-repeat;
         background-size: contain;
     }
+}
+
+.header__basic-info-total:hover{
+    scale: 1.05;
 }
 </style>

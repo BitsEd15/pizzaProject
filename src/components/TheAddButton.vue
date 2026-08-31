@@ -77,6 +77,7 @@ const chageImage = computed(() => {
         border-radius: 100%;
         background-color: var(--button-orange-text);
         padding: 4px 9px;
+
         span {
             font-family: var(--font-family);
             font-weight: 700;
